@@ -1,0 +1,10 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+<title>Result</title>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+{% endblock %}
+{% block content %}
+<h1>Congratulations!</h1>
+<p>You scored {{raw}} out of {{options}} = {{percent}} %!</p>
+<a href="/"><button id="jumble">Return Home</button></a>
+{% endblock %}

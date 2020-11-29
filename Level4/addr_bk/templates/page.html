@@ -1,0 +1,21 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+<title>Address Book</title>
+<link rel="stylesheet" type="text/css" href="../static/css/main.css">
+{%endblock%}
+{% block content %}
+<h1>Address Book</h1>
+<form method="POST">
+    <input type="text" name="name">
+    <input type="tel" name="number">
+    <input type="submit" id="sub">
+</form>
+<div>
+    {% for item in addresses %}
+    <p id="name"> Name: {{item['name']}} <a href="/delete/{{item['_id']}}" id="deletes">X</a> </p>
+    <p id="num"> Number: {{item['number']}} </p>
+
+    {%endfor%}
+</div>
+
+{%endblock%}

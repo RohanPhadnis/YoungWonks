@@ -1,0 +1,17 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+<title>Add Product</title>
+{% endblock %}
+{% block content %}
+<h1>Add a Product</h1>
+<a href="/"><button>Go Back</button></a>
+<form method="post">
+    <input name="name" type="text" placeholder="name">
+    <input name="description" type="text" placeholder="description">
+    <input name="price" type="number" placeholder="price">
+    <input name="unit" type="text" placeholder="unit">
+    <input name="quant" type="number" placeholder="quantity limit">
+    <input name="img" type="url" placeholder="image link">
+    <input type="submit">
+</form>
+{% endblock %}

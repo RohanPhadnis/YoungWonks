@@ -1,0 +1,23 @@
+#deletes {
+    color:white;
+    background:teal;
+}
+
+#name {
+    font-size:32;
+}
+
+#sub {
+    color:white;
+    background:teal;
+}
+
+p {
+    color:teal;
+}
+
+h1 {
+    background:teal;
+    color:white;
+    text-align:center;
+}

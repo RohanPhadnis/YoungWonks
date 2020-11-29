@@ -1,0 +1,21 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+<title>Buy Product</title>
+{% endblock %}
+{% block content %}
+<h1>Buy Products</h1>
+<a href="/"><button>Go Back</button></a>
+<form method="post">
+    {% for p in prod %}
+    <div>
+        <img src="{{p['img']}}" height="100" width="100">
+        <h2>{{p['name']}}</h2>
+        <p>{{p['description']}}</p>
+        <p>${{p['price']}} / {{p['unit']}}</p>
+        <p>Hurry! Only {{p['quant']}} {{p['unit']}} left in stock!</p>
+        <input type="number" name="{{p['_id']}}" placeholder="quantity">
+    </div>
+    {% endfor %}
+    <input type="submit">
+</form>
+{% endblock %}

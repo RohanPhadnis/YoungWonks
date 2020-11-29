@@ -1,0 +1,17 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+<title>Figure Out</title>
+<link rel="stylesheet" type="text/css" href="../static/css/style.css">
+{% endblock %}
+{% block content %}
+<h1>Jumble Words!</h1>
+<h3>Guess the answer:</h3>
+<h1>{{message}}</h1>
+<form method="post">
+    {% for word in words %}
+    <p>{{words[word]}}</p>
+    <input type="text" name="{{word}}">
+    {% endfor %}
+    <input type="submit" id="jumble">
+</form>
+{% endblock %}

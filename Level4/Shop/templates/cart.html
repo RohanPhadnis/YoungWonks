@@ -1,0 +1,31 @@
+{% extends 'bootstrap/base.html' %}
+{% block title %}
+<title>Cart</title>
+{% endblock %}
+{% block content %}
+<h1>Cart</h1>
+<a href="/"><button>Home</button></a>
+<a href="/empty"><button>Empty Cart</button></a>
+<table border="1px solid black">
+    <tr>
+        <td><b>Product Title</b></td>
+        <td><b>Product Description</b></td>
+        <td><b>Product Price</b></td>
+        <td><b>Quantity Bought</b></td>
+        <td><b>Total</b></td>
+    </tr>
+    {% for lst in prod_list %}
+    <tr>
+        <td>{{lst['name']}}</td>
+        <td>{{lst['description']}}</td>
+        <td>{{lst['price']}}</td>
+        <td>{{lst['quantity']}}</td>
+        <td>{{lst['total']}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+        <td colspan="4"><b>Grand Total</b></td>
+        <td>{{tot}}</td>
+    </tr>
+</table>
+{% endblock %}

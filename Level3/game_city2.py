@@ -19,7 +19,7 @@ class Ball:
         self.radius = r
         self.figure = 0
         self.vel = vel
-        self.spd = 10
+        self.spd = 5
     def draw(self):
         self.figure = pygame.draw.circle(screen, (0,0,255), (self.pos[0], self.pos[1]), self.radius)
     def move(self):

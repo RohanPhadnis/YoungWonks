@@ -5,10 +5,12 @@ pygame.init()
 size = 780#int(input('screen size: '))
 screen = pygame.display.set_mode((size, size))
 pygame.display.set_caption('Game City 2')
+clock = pygame.time.Clock()
+FR = 25
 
 
 def show_text(text, x, y, color = (255,255,255)):
-    font=pygame.font.SysFont('freesans',50)
+    font=pygame.font.SysFont('freesans',40)
     textobj=font.render(text,False,color)
     screen.blit(textobj,(x,y))
 
@@ -77,7 +79,7 @@ class Button(Paddle):
         self.command()
     def draw(self):
         super().draw()
-        show_text(self.text, self.pos[0]+10, self.pos[1]+10)
+        show_text(self.text, self.pos[0]+15, self.pos[1])
 
 
 def nothing():
@@ -138,6 +140,7 @@ def pong1():
                 do = False
             
         pygame.display.update()
+        clock.tick(FR)
 
 
 def pong2():
@@ -201,6 +204,7 @@ def pong2():
                 do = False
             
         pygame.display.update()
+        clock.tick(FR)
         
 
 def flappy_ball():
@@ -249,6 +253,7 @@ def flappy_ball():
             elif event.type == MOUSEBUTTONDOWN and event.button == 1 and back.figure.collidepoint(event.pos):
                 do = False
         pygame.display.update()
+        clock.tick(FR)
 
 
 
@@ -313,6 +318,7 @@ def tic_tac_toe():
                 if back.figure.collidepoint(event.pos):
                     do = False
         pygame.display.update()
+        clock.tick(FR)
 
 
 def snake():
@@ -372,6 +378,7 @@ def snake():
             elif event.type == MOUSEBUTTONDOWN and event.button == 1 and back.figure.collidepoint(event.pos):
                 do = False
         pygame.display.update()
+        clock.tick(FR)
 
 def brick():
     ball = Ball([0,0])
@@ -440,6 +447,7 @@ def brick():
             elif event.type == MOUSEBUTTONDOWN and event.button == 1 and back.figure.collidepoint(event.pos):
                 do = False
         pygame.display.update()
+        clock.tick(FR)
 
 
 #brick()
@@ -469,6 +477,7 @@ def menu():
             elif event.type == QUIT:
                 quitter()
         pygame.display.update()
+        clock.tick(FR)
 
 
 menu()

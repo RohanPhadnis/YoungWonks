@@ -2,7 +2,7 @@ import pygame, random
 from pygame.locals import *
 pygame.init()
 
-size = 780#int(input('screen size: '))
+size = 720#int(input('screen size: '))
 screen = pygame.display.set_mode((size, size))
 pygame.display.set_caption('Game City 2')
 clock = pygame.time.Clock()
@@ -27,7 +27,7 @@ class Ball:
     def move(self):
         self.pos[0] += self.vel[0] * int(self.spd)
         self.pos[1] += self.vel[1] * int(self.spd)
-        self.spd += 0.01
+        self.spd += 0.001
     def bounce(self, vel = [random.choice([-3,-2,-1,1,2,3]), random.choice([-3,-2,-1,1,2,3])]):
         self.vel = vel
 

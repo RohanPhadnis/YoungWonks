@@ -64,9 +64,9 @@ class Maze:
         print(len(self.grid),type(self.grid))
     def draw(self):
         for x in range(0,self.width,self.size):
-            pygame.draw.line(screen,(0,0,0),(x,0),(x,self.height),4)
+            pygame.draw.line(screen,(0,0,0),(x,0),(x,self.height),1)
         for y in range(0,self.height,self.size):
-            pygame.draw.line(screen,(0,0,0),(0,y),(self.width,y),4)
+            pygame.draw.line(screen,(0,0,0),(0,y),(self.width,y),1)
 
 diagonals = input('do you want to enable diagonals (y/n): ')
 
@@ -157,3 +157,4 @@ while True:
             finding = True
             temp = []
     pygame.display.update()
+
